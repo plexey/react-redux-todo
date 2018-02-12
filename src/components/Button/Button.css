@@ -10,11 +10,12 @@
   padding: 10px;
   border-radius: 3px;
   box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
-  transition: 200ms ease all;
+  transition: 100ms ease-out all;
+  cursor: pointer;
 }
 
 .main:active {
-  transform: scale(.9,.9);
+  transform: scale(.95,.95);
 }
 
 .text {
