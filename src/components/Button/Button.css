@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: hsl(214, 56%, 47%);
+  color: white;
+  font-size: 17px;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
+}
+
+.text {
+  margin: 0 10px 0 0;
+}
+
+.icon {
+  /* margin: 0 0 0 10px; */
+}
