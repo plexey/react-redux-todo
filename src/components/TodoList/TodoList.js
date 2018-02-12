@@ -1,13 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Todo from '../Todo/Todo'
+import React from 'react';
+import PropTypes from 'prop-types';
+import FlipMove from 'react-flip-move';
+import Todo from '../Todo/Todo';
+import styles from './TodoList.css';
 
 const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
+  <FlipMove className={styles.main} duration={200} easing="ease-out" typeName="ul">
     {todos.map(todo => (
       <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
     ))}
-  </ul>
+  </FlipMove>
 )
 
 TodoList.propTypes = {
