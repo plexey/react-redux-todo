@@ -1,29 +1,28 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
 import styles from './Todo.css';
-import Button from '../Button/Button';
 import classNames from 'classnames';
+import FontAwesome from 'react-fontawesome';
 
 class Todo extends Component {
   render() {
     const { onClick, completed, text } = this.props;
     return (
-      <div className={styles.main}>
+      <div className={classNames({
+        [styles.main]: true,
+        [styles.completed]: completed
+      })}>
+        <FontAwesome className={styles.checkbox} onClick={onClick} name={completed ? 'check-square': 'square'} />
         <li
           className={classNames({
-            [styles.text]: true,
-            [styles.completed]: completed
+            [styles.text]: true
           })}
-          onClick={onClick}
           style={{
             textDecoration: completed ? 'line-through' : 'none'
           }}
         >
           {text}
         </li>
-        <Button
-          action={onClick}
-          fontAwesomeIcon={completed ? 'check-square' : 'square'} />
       </div>
     );
   }
