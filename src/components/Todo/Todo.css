@@ -6,7 +6,7 @@
   width: 75%;
   margin: 5px 0 5px 0;
   background: hsl(0, 0%, 95%);
-  padding: 10px;
+  padding: 13px;
   border-radius: 3px;
   box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
 }
@@ -17,8 +17,16 @@
   border-radius: 3px;
   flex-grow: 1;
   width: 75%;
+  transition: 200ms ease all;
 }
 
 .completed {
+  background: hsl(0, 0%, 85%);
   color: hsl(0, 0%, 61%);
+}
+
+.checkbox {
+  font-size: 30px;
+  color: hsl(214, 56%, 47%);
+  margin: 0 10px 0 0;
 }
