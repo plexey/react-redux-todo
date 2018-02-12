@@ -1,0 +1,16 @@
+.main {
+  padding: 10px 20px 10px 20px;
+  background: hsl(214, 56%, 47%);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
+  margin: 0 5px 0 5px;
+  transition: 200ms ease all;
+}
+
+.active {
+  background: hsl(0, 56%, 52%);
+  color: white;
+  border-radius: 3px;
+}
