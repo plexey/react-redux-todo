@@ -1,12 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
-import Button from '../components/Button/Button';
 import Input from '../components/Input/Input';
 import styles from './AddTodo.css'
 
 let AddTodo = ({ dispatch }) => {
-  let input
+  let input;
   return (
     <form
       className={styles.main}
@@ -20,12 +19,11 @@ let AddTodo = ({ dispatch }) => {
       }}
     >
       <Input
+        placeholderText="What to do?"
         misc={node => {
           input = node
         }}
       />
-
-      <Button type="submit" text="Add Todo" fontAwesomeIcon={'plus'} />
     </form>
   )
 }
