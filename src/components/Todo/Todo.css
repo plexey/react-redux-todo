@@ -1,33 +1,61 @@
 .main {
   display: flex;
+  background: hsl(0, 0%, 95%);
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 75%;
-  margin: 5px 0 5px 0;
-  background: hsl(0, 0%, 95%);
-  padding: 13px;
-  border-radius: 3px;
-  box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
+  max-width: 100%;
+  min-width: 100%;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: hsl(0, 0%, 70%);
+  transition: 200ms ease border-radius;
   transition: 200ms ease background;
+  color: hsl(0, 0%, 24%);
+}
+
+.main:first-child {
+  border-width: 0 0 1px 0;
+}
+
+.main:nth-child(2) {
+  border-width: 0 0 1px 0;
+}
+
+.main:last-child {
 }
 
 .text {
-  font-size: 17px;
+  font-size: 20px;
   margin: 5px;
   border-radius: 3px;
   flex-grow: 1;
   width: 75%;
   transition: 200ms ease color;
+  padding: 15px 0 15px 0;
 }
 
 .completed {
-  background: hsl(0, 0%, 85%);
+  background: hsl(0, 0%, 80%);
   color: hsl(0, 0%, 61%);
 }
 
 .checkbox {
   font-size: 30px;
-  color: hsl(214, 56%, 47%);
-  margin: 0 10px 0 0;
+  color: hsl(222, 23%, 47%);
+  cursor: pointer;
+  margin: 0 15px 0 15px;
 }
+
+.delete {
+  color: hsla(0, 45%, 55%, 0);
+  font-size: 20px;
+  transition: 100ms ease all;
+  cursor: pointer;
+  margin: 0 20px 0 0;
+}
+
+.deleteVisible {
+  color: hsla(0, 45%, 55%, 1);
+}
+

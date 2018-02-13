@@ -1,18 +1,36 @@
 import React, { Component } from "react"
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import styles from './Todo.css';
 import classNames from 'classnames';
 import FontAwesome from 'react-fontawesome';
+import { removeTodo } from '../../actions/index';
 
 class Todo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false
+    }
+  }
+
+  toggleActive = val => {
+    this.setState({
+      active: val
+    })
+  }
   render() {
-    const { onClick, completed, text } = this.props;
+    const { active } = this.state;
+    const { dispatch, id, onClick, completed, text } = this.props;
     return (
-      <div className={classNames({
-        [styles.main]: true,
-        [styles.completed]: completed
-      })}>
-        <FontAwesome className={styles.checkbox} onClick={onClick} name={completed ? 'check-square': 'square'} />
+      <div
+        onMouseEnter={() => this.toggleActive(true)}
+        onMouseLeave={() => this.toggleActive(false)}
+        className={classNames({
+          [styles.main]: true,
+          [styles.completed]: completed
+        })}>
+        <FontAwesome className={styles.checkbox} onClick={onClick} name={completed ? 'check-square' : 'square'} />
         <li
           className={classNames({
             [styles.text]: true
@@ -23,6 +41,13 @@ class Todo extends Component {
         >
           {text}
         </li>
+        <FontAwesome
+          className={classNames({
+            [styles.delete]: true,
+            [styles.deleteVisible]: active
+          })}
+          name={'times'}
+          onClick={() => dispatch(removeTodo(id))} />
       </div>
     );
   }
@@ -33,5 +58,7 @@ Todo.propTypes = {
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
+
+Todo = connect()(Todo)
 
 export default Todo;
