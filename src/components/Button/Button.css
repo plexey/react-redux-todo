@@ -3,15 +3,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: hsl(214, 56%, 47%);
-  color: white;
-  font-size: 17px;
-  border: none;
-  padding: 10px;
-  border-radius: 3px;
-  box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
-  transition: 100ms ease-out all;
   cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  color: hsl(0, 0%, 37%);
+  text-decoration: none;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: hsl(0, 0%, 37%);
+  margin: 0 5px 0 5px;
+  transition: 100ms ease-out all;
+  font-weight: bold;
+  font-size: 15px;
+  background: none;
+  font-family: 'Oxygen', sans-serif;
 }
 
 .main:active {
@@ -23,5 +28,6 @@
 }
 
 .icon {
-  /* margin: 0 0 0 10px; */
+  color: hsl(0, 0%, 37%);
+  font-size: 15px;
 }
