@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+import { addTodo } from '../modules/todo';
 import Input from '../components/Input/Input';
 import styles from './AddTodo.css'
 

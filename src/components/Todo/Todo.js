@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import styles from './Todo.css';
 import classNames from 'classnames';
 import FontAwesome from 'react-fontawesome';
-import { removeTodo } from '../../actions/index';
+import { removeTodo } from '../../modules/todo';
 
 class Todo extends Component {
   constructor(props) {
