@@ -1,11 +1,28 @@
 .main {
   padding: 10px;
-  background: hsl(0, 0%, 92%);
-  font-size: 17px;
+  background: none;
+  font-size: 20px;
   margin: 0 20px 0 0;
   border-radius: 3px;
-  border: none;
-  max-width: 60%;
-  min-width: 40%;
-  box-shadow: inset 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: hsl(0, 0%, 80%);
+  min-width: 400px;
+}
+
+.main::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: hsl(0, 0%, 50%);
+  font-style: italic;
+}
+.main::-moz-placeholder { /* Firefox 19+ */
+  color: hsl(0, 0%, 50%);
+  font-style: italic;
+}
+.main:-ms-input-placeholder { /* IE 10+ */
+  color: hsl(0, 0%, 50%);
+  font-style: italic;
+}
+.main:-moz-placeholder { /* Firefox 18- */
+  color: hsl(0, 0%, 50%);
+  font-style: italic;
 }
