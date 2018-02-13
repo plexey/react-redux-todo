@@ -5,9 +5,16 @@ import Todo from '../Todo/Todo';
 import styles from './TodoList.css';
 
 const TodoList = ({ todos, onTodoClick }) => (
-  <FlipMove className={styles.main} duration={200} easing="ease-out" typeName="ul">
+  <FlipMove 
+    appearAnimation="fade"
+    enterAnimation="fade"
+    leaveAnimation="fade"
+    className={styles.main} 
+    duration={200} 
+    easing="ease-out" 
+    typeName="ul">
     {todos.map(todo => (
-      <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
+      <Todo key={todo.id} {...todo} id={todo.id} onClick={() => onTodoClick(todo.id)} />
     ))}
   </FlipMove>
 )
