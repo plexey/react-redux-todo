@@ -1,6 +1,22 @@
-.container {
+.outer {
+  font-family: 'Oxygen', sans-serif;
   display: flex;
   flex-direction: column;
-  background: hsl(0, 0%, 73%);
+  align-items: center;
+  background: rgb(201, 201, 201);
+}
+
+.container {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: hsl(0, 0%, 90%);
   min-height: 100vh;
+  margin: 50px 0 0 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: hsl(0, 0%, 70%);
+  box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, 0.15);
 }
