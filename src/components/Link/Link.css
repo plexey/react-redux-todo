@@ -1,12 +1,16 @@
 .main {
   padding: 10px 20px 10px 20px;
-  background: hsl(214, 56%, 47%);
-  color: white;
+  color: hsl(0, 0%, 37%);
   text-decoration: none;
-  border-radius: 3px;
-  box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.3);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: hsl(0, 0%, 50%);
   margin: 0 5px 0 5px;
   transition: 100ms ease-out all;
+  font-weight: bold;
+  background: none;
+  font-size: 15px;
 }
 
 .main:active {
@@ -14,7 +18,7 @@
 }
 
 .active {
-  background: hsl(0, 56%, 52%);
-  color: white;
-  border-radius: 3px;
+  background: hsla(0, 0%, 100%, 0.4);
+  color: hsl(221, 39%, 45%);
+  border-color: hsl(221, 39%, 45%);
 }
