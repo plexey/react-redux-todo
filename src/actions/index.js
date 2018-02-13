@@ -7,6 +7,15 @@ export const addTodo = text => {
   }
 }
 
+export const removeTodo = id => {
+  console.log(id)
+  return {
+    type: 'REMOVE_TODO',
+    id: id
+  }
+}
+
+
 export const setVisibilityFilter = filter => {
   return {
     type: 'SET_VISIBILITY_FILTER',
