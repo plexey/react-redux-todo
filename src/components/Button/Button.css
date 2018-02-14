@@ -14,7 +14,6 @@
   margin: 0 5px 0 5px;
   transition: 100ms ease-out all;
   font-weight: bold;
-  font-size: 15px;
   background: none;
   font-family: 'Oxygen', sans-serif;
 }
@@ -24,6 +23,7 @@
 }
 
 .text {
+  font-size: 15px;
   margin: 0 10px 0 0;
 }
 
