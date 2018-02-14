@@ -5,6 +5,9 @@
 const ADD_TODO = 'redux-todo/modules/todo/ADD_TODO';
 const REMOVE_TODO = 'redux-todo/modules/todo/REMOVE_TODO';
 const TOGGLE_TODO = 'redux-todo/modules/todo/TOGGLE_TODO';
+const TOGGLE_ALL_TODOS = 'redux-todo/modules/todo/TOGGLE_ALL_TODOS';
+const REMOVE_COMPLETED = 'redux-todo/modules/todo/REMOVE_COMPLETED';
+const REMOVE_ALL = 'redux-todo/modules/todo/REMOVE_ALL';
 
 // Reducer
 
@@ -28,6 +31,17 @@ const todos = (state = [], action) => {
           ? { ...todo, completed: !todo.completed }
           : todo
       )
+    case TOGGLE_ALL_TODOS: {
+      return state.every(todo => todo.completed === true)
+        ? state.map(todo => ({ ...todo, completed: false }))
+        : state.map(todo => ({ ...todo, completed: true }))
+    }
+    case REMOVE_COMPLETED: {
+      return state.filter(todo => todo.completed === false)
+    }
+    case REMOVE_ALL: {
+      return state = []
+    }
     default:
       return state
   }
@@ -54,6 +68,24 @@ export const toggleTodo = id => {
   return {
     type: TOGGLE_TODO,
     id
+  }
+}
+
+export const toggleAllTodos = () => {
+  return {
+    type: TOGGLE_ALL_TODOS
+  }
+}
+
+export const removeCompleted = () => {
+  return {
+    type: REMOVE_COMPLETED
+  }
+}
+
+export const removeAll = () => {
+  return {
+    type: REMOVE_ALL
   }
 }
 
