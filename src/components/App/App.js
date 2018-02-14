@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Header from '../Header/Header'
 import AddTodo from '../../containers/AddTodo/AddTodo'
-import VisibleTodoList from '../../containers/VisibleTodoList'
+import TodoList from '../../containers/TodoList/TodoList';
 import styles from './App.css';
 import ListHeader from '../../containers/ListHeader/ListHeader';
 import ListContainer from '../../containers/ListContainer/ListContainer';
@@ -15,7 +15,7 @@ class App extends Component {
           <ListContainer>
             <AddTodo />
             <ListHeader />
-            <VisibleTodoList />
+            <TodoList />
           </ListContainer>
         </div>
       </div>
