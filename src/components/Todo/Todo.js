@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import styles from './Todo.css';
 import classNames from 'classnames';
 import FontAwesome from 'react-fontawesome';
-import { removeTodo } from '../../modules/todo';
 
 const TodoText = ({ text, completed }) => (
   <p
