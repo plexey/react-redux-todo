@@ -1,16 +1,22 @@
+/* Main */
+
 .main {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 60px;
   background: hsl(0, 0%, 95%);
   border-style: solid;
   border-width: 0 0 1px 0;
   border-color: hsl(0, 0%, 70%);
-  transition: 200ms ease border-radius;
   transition: 200ms ease background;
   color: hsl(0, 0%, 24%);
+}
+
+.mainCompleted {
+  background: hsl(0, 0%, 85%);
 }
 
 .main:first-child {
@@ -25,44 +31,53 @@
   border-width: 0 0 0 0;
 }
 
+/* Text */
+
 .text {
-  font-size: 20px;
-  margin: 5px;
-  border-radius: 3px;
+  height: 100%;
+  display: flex;
+  align-items: center;
   flex-grow: 1;
-  transition: 200ms ease color;
-  padding: 15px 0 15px 0;
-  max-width: 520px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: 500ms ease text-decoration;
-}
-
-.textCompleted {
-  text-decoration: line-through;
-  color: hsl(0, 0%, 61%);
-}
-
-.completed {
-  background: hsl(0, 0%, 85%);
-}
-
-.checkbox {
-  font-size: 30px;
-  color: hsl(222, 23%, 47%);
-  cursor: pointer;
-  margin: 0 15px 0 15px;
-}
-
-.delete {
-  color: hsla(0, 45%, 55%, 0);
   font-size: 20px;
-  transition: 100ms ease all;
-  cursor: pointer;
-  margin: 0 20px 0 0;
+  text-indent: 20px;
 }
 
-.deleteVisible {
-  color: hsla(0, 45%, 55%, 1);
+/* Control */
+
+.control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  padding: 0 20px 0 20px;
+  font-size: 23px;
+  cursor: pointer;
 }
+
+/* Check Icon */
+
+.check {
+  color: hsl(231, 46%, 46%);
+  transition: 300ms ease color;
+}
+
+.checkCompleted {
+  color: hsl(0, 0%, 54%);
+}
+
+/* Cross Icon */
+
+.cross {
+  color: hsla(0, 0%, 0%, 0);
+  transition: 300ms ease color;
+}
+
+.crossVisible {
+  color: hsl(355, 48%, 52%);
+}
+
+
 

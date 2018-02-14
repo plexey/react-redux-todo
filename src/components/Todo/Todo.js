@@ -6,6 +6,24 @@ import classNames from 'classnames';
 import FontAwesome from 'react-fontawesome';
 import { removeTodo } from '../../modules/todo';
 
+const TodoText = ({ text, completed }) => (
+  <p
+    className={classNames({
+      [styles.text]: true
+    })}>
+    {text}
+  </p>
+)
+
+const TodoControl = ({ iconClasses, icon, action }) => (
+  <div className={styles.control} onClick={action}>
+    <FontAwesome
+      className={iconClasses}
+      name={icon}
+    />
+  </div>
+)
+
 class Todo extends Component {
   constructor(props) {
     super(props);
@@ -21,32 +39,33 @@ class Todo extends Component {
   }
   render() {
     const { active } = this.state;
-    const { dispatch, id, onClick, completed, text } = this.props;
+    const { toggleTodo, removeTodo, completed, text } = this.props;
+    const checkClasses = classNames({
+      [styles.check]: true,
+      [styles.checkCompleted]: completed
+    })
+    const crossClasses = classNames({
+      [styles.cross]: true,
+      [styles.crossVisible]: active
+    })
     return (
-      <div
+      <li
         onMouseEnter={() => this.toggleActive(true)}
         onMouseLeave={() => this.toggleActive(false)}
         className={classNames({
           [styles.main]: true,
-          [styles.completed]: completed
+          [styles.mainCompleted]: completed
         })}>
-        <FontAwesome className={styles.checkbox} onClick={onClick} name={completed ? 'check-square' : 'square'} />
-        <li
-          className={classNames({
-            [styles.text]: true,
-            [styles.textCompleted]: completed
-          })}
-        >
-          {text}
-        </li>
-        <FontAwesome
-          className={classNames({
-            [styles.delete]: true,
-            [styles.deleteVisible]: active
-          })}
-          name={'times'}
-          onClick={() => dispatch(removeTodo(id))} />
-      </div>
+        <TodoControl
+          iconClasses={checkClasses}
+          icon={completed ? 'check-square' : 'square'}
+          action={toggleTodo} />
+        <TodoText text={text} completed={completed} />
+        <TodoControl
+          iconClasses={crossClasses}
+          icon={'times'}
+          action={removeTodo} />
+      </li>
     );
   }
 }
