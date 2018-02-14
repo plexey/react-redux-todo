@@ -1,18 +1,22 @@
 .main {
-  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 70px;
   border-style: solid;
   border-width: 0 0 1px 0;
   border-color: hsl(0, 0%, 70%);
+  padding: 0 20px 0 20px;
 }
 
 .heading {
   font-size: 17px;
   color: hsl(0, 0%, 37%);
   font-weight: bold;
-  margin: 0 20px 0 20px;
+  width: 100px;
+}
+
+.filters {
+  margin: 0 60px 0 60px;
 }
