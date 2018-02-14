@@ -1,11 +1,10 @@
 .main {
   display: flex;
-  background: hsl(0, 0%, 95%);
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  min-width: 100%;
+  width: 100%;
+  background: hsl(0, 0%, 95%);
   border-style: solid;
   border-width: 0 0 1px 0;
   border-color: hsl(0, 0%, 70%);
@@ -23,6 +22,7 @@
 }
 
 .main:last-child {
+  border-width: 0 0 0 0;
 }
 
 .text {
@@ -30,14 +30,21 @@
   margin: 5px;
   border-radius: 3px;
   flex-grow: 1;
-  width: 75%;
   transition: 200ms ease color;
   padding: 15px 0 15px 0;
+  max-width: 520px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 500ms ease text-decoration;
+}
+
+.textCompleted {
+  text-decoration: line-through;
+  color: hsl(0, 0%, 61%);
 }
 
 .completed {
-  background: hsl(0, 0%, 80%);
-  color: hsl(0, 0%, 61%);
+  background: hsl(0, 0%, 85%);
 }
 
 .checkbox {

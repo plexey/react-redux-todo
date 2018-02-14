@@ -33,11 +33,9 @@ class Todo extends Component {
         <FontAwesome className={styles.checkbox} onClick={onClick} name={completed ? 'check-square' : 'square'} />
         <li
           className={classNames({
-            [styles.text]: true
+            [styles.text]: true,
+            [styles.textCompleted]: completed
           })}
-          style={{
-            textDecoration: completed ? 'line-through' : 'none'
-          }}
         >
           {text}
         </li>
