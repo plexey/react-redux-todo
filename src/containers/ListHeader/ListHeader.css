@@ -20,3 +20,28 @@
 .filters {
   margin: 0 60px 0 60px;
 }
+
+/* Mobile styling */
+
+.mobileMain {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    display: none;
+  }
+
+  .mobileMain {
+    height: 50px;;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: hsl(0, 0%, 70%);
+  }
+
+}

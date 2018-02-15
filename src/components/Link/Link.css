@@ -22,3 +22,10 @@
   color: hsl(221, 39%, 45%);
   border-color: hsl(221, 39%, 45%);
 }
+
+
+@media screen and (max-width: 700px) {
+  .main {
+    font-size: 12px;
+  }
+}

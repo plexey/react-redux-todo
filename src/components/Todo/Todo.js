@@ -49,7 +49,8 @@ class Todo extends Component {
     const crossClasses = classNames({
       "fas fa-times": true,
       [styles.cross]: true,
-      [styles.crossVisible]: active
+      [styles.crossVisible]: active,
+      [styles.mobileCross]: true
     })
     return (
       <li
