@@ -2,7 +2,6 @@
   "name": "redux-todo",
   "version": "0.1.0",
   "description": "A simple Todo app built with React and Redux",
-  "homepage": "https://github.com/plexey/react-redux-todo",
   "license": "MIT",
   "repository": {
     "type": "git",
