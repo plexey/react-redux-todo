@@ -9,6 +9,7 @@
   border-color: hsl(0, 0%, 80%);
   outline: none;
   flex-grow: 1;
+  color: hsl(0, 0%, 16%);
 }
 
 .main::-webkit-input-placeholder { /* Chrome/Opera/Safari */

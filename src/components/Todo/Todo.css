@@ -45,6 +45,7 @@
 /* Input */
 
 .input {
+  color: hsl(0, 0%, 16%);
   border: none;
   font-size: 20px;
   background: none;
