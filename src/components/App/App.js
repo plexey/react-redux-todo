@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import Header from '../Header/Header'
+import Header from '../../containers/Header/Header'
+import Footer from '../../containers/Footer/Footer';
 import AddTodo from '../../containers/AddTodo/AddTodo'
 import TodoList from '../../containers/TodoList/TodoList';
 import styles from './App.css';
@@ -18,8 +19,8 @@ class App extends Component {
             <TodoList />
           </ListContainer>
         </div>
+        <Footer />
       </div>
-
     );
   }
 }
