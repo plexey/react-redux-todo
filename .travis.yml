@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "node"
+
+script:
+  - npm run build
+
+deploy:
+  provider: surge
+  project: ./build/
+  domain: reactreduxtodo.surge.sh  
+  skip_cleanup: true
