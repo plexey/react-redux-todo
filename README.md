@@ -6,7 +6,7 @@ A simple todo app built with Redux and React.
 
 ## Demo
 
-<a href="">Try it hear</a>
+<a href="http://reactreduxtodo.surge.sh/">Try it hear</a>
 
 ## Uses
 - <a href="https://github.com/joshwcomeau/react-flip-move/blob/master/README.md">react-flip-move</a> - list item animation
