@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
-import { toggleTodo, removeTodo } from '../../modules/todo';
 import FlipMove from 'react-flip-move';
 import Todo from '../../components/Todo/Todo';
 import styles from './TodoList.css';
 
-const TodoList = ({ todos, toggleTodo, removeTodo }) => (
+const TodoList = ({ todos }) => (
   <FlipMove 
     appearAnimation="fade"
     enterAnimation="fade"
@@ -14,13 +13,13 @@ const TodoList = ({ todos, toggleTodo, removeTodo }) => (
     className={styles.main} 
     duration={200} 
     easing="ease-out" 
+    staggerDelayBy={10}
     typeName="ul">
     {todos.map(todo => (
       <Todo 
-        key={todo.id} {...todo} 
-        id={todo.id} 
-        toggleTodo={() => toggleTodo(todo.id)} 
-        removeTodo={() => removeTodo(todo.id)} />
+        key={todo.id} 
+        {...todo} 
+        id={todo.id} />
     ))}
   </FlipMove>
 )
@@ -32,8 +31,7 @@ TodoList.propTypes = {
       completed: PropTypes.bool.isRequired,
       text: PropTypes.string.isRequired
     }).isRequired
-  ).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  ).isRequired
 }
 
 // get visible
@@ -59,8 +57,6 @@ const mapStateToProps = state => ({
 // map dispatch to props
 
 const mapDispatchToProps = {
-  toggleTodo,
-  removeTodo
 }
 
 const VisibleTodoList = connect(
