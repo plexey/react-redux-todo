@@ -13,7 +13,6 @@ const TodoList = ({ todos }) => (
     className={styles.main} 
     duration={200} 
     easing="ease-out" 
-    staggerDelayBy={10}
     typeName="ul">
     {todos.map(todo => (
       <Todo 
