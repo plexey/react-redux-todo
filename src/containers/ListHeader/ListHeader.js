@@ -5,7 +5,24 @@ import styles from './ListHeader.css';
 import { connect } from 'react-redux'
 import { removeCompleted, removeAll } from '../../modules/todo';
 
-let ListHeader = ({ removeCompleted, removeAll, activeTodosCount, completedTodosCount }) => {
+const MobileLayout = ({ removeCompleted }) => (
+  <div className={styles.mobileMain}>
+    <FilterLink filter="SHOW_ALL">
+      All
+    </FilterLink>
+    <FilterLink filter="SHOW_ACTIVE">
+      Active
+    </FilterLink>
+    <FilterLink filter="SHOW_COMPLETED">
+      Completed
+    </FilterLink>
+    <Link active={false} onClick={removeCompleted}>
+      Clear Completed
+    </Link>
+  </div>
+)
+
+const DefaultLayout = ({ removeCompleted, activeTodosCount }) => {
   return (
     <div className={styles.main}>
       <h2 className={styles.heading}>{activeTodosCount} Active</h2>
@@ -26,6 +43,15 @@ let ListHeader = ({ removeCompleted, removeAll, activeTodosCount, completedTodos
       </Link>
       </div>
     </div>
+  )
+}
+
+let ListHeader = ({ removeCompleted, removeAll, activeTodosCount, completedTodosCount }) => {
+  return (
+    <React.Fragment>
+      <MobileLayout removeCompleted={removeCompleted} />
+      <DefaultLayout removeCompleted={removeCompleted} activeTodosCount={activeTodosCount} />
+    </React.Fragment>
   )
 }
 
