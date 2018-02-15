@@ -2,12 +2,13 @@
 
 // Action Types
 
-const ADD_TODO = 'redux-todo/modules/todo/ADD_TODO';
-const REMOVE_TODO = 'redux-todo/modules/todo/REMOVE_TODO';
-const TOGGLE_TODO = 'redux-todo/modules/todo/TOGGLE_TODO';
-const TOGGLE_ALL_TODOS = 'redux-todo/modules/todo/TOGGLE_ALL_TODOS';
-const REMOVE_COMPLETED = 'redux-todo/modules/todo/REMOVE_COMPLETED';
-const REMOVE_ALL = 'redux-todo/modules/todo/REMOVE_ALL';
+const ADD_TODO = 'redux-todo/todos/ADD_TODO';
+const EDIT_TODO = 'redux-todo/todos/EDIT_TODO';
+const REMOVE_TODO = 'redux-todo/todos/REMOVE_TODO';
+const TOGGLE_TODO = 'redux-todo/todos/TOGGLE_TODO';
+const TOGGLE_ALL_TODOS = 'redux-todo/todos/TOGGLE_ALL_TODOS';
+const REMOVE_COMPLETED = 'redux-todo/todos/REMOVE_COMPLETED';
+const REMOVE_ALL = 'redux-todo/todos/REMOVE_ALL';
 
 // Reducer
 
@@ -22,6 +23,13 @@ const todos = (state = [], action) => {
           completed: false
         }
       ]
+    case EDIT_TODO: {
+      return state.map(todo =>
+        (todo.id === action.id)
+          ? { ...todo, text: action.text }
+          : todo
+      )
+    }
     case REMOVE_TODO: {
       return state.filter(todo => todo.id !== action.id)
     }
@@ -50,43 +58,39 @@ const todos = (state = [], action) => {
 // Action Creators
 
 let nextTodoId = 0
-export const addTodo = text => {
-  return {
-    type: ADD_TODO,
-    id: nextTodoId++,
-    text
-  }
-}
 
-export const removeTodo = id => {
-  return {
-    type: REMOVE_TODO,
-    id: id
-  }
-}
-export const toggleTodo = id => {
-  return {
-    type: TOGGLE_TODO,
-    id
-  }
-}
+export const addTodo = text => ({
+  type: ADD_TODO,
+  id: nextTodoId++,
+  text
+})
 
-export const toggleAllTodos = () => {
-  return {
-    type: TOGGLE_ALL_TODOS
-  }
-}
+export const editTodo = ({ id, text }) => ({
+  type: EDIT_TODO,
+  id: id,
+  text: text
+})
 
-export const removeCompleted = () => {
-  return {
-    type: REMOVE_COMPLETED
-  }
-}
+export const removeTodo = id => ({
+  type: REMOVE_TODO,
+  id: id
+})
 
-export const removeAll = () => {
-  return {
-    type: REMOVE_ALL
-  }
-}
+export const toggleTodo = id => ({
+  type: TOGGLE_TODO,
+  id
+})
+
+export const toggleAllTodos = () => ({
+  type: TOGGLE_ALL_TODOS
+})
+
+export const removeCompleted = () => ({
+  type: REMOVE_COMPLETED
+})
+
+export const removeAll = () => ({
+  type: REMOVE_ALL
+})
 
 export default todos
